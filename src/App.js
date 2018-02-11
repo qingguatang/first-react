@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Button } from "antd";
+import FormPage from "./pages/form/Index";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Button type="primary">Button</Button>
+        <FormPage/>
       </div>
     );
   }
