@@ -85,7 +85,7 @@ class FormPage extends Component {
     return (
       <div>
         <Row type="flex" justify="center">
-          <Col span={12}>
+          <Col span={18}>
             <Row>
               <ButtonGroup>
                 <Button type="primary" onClick={this.handleSubmit}>
