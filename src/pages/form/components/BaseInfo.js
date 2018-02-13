@@ -42,6 +42,18 @@ class BaseInfo extends Component {
                 ]
               })(<Input placeholder="通知编号" />)}
             </FormItem>
+            <FormItem {...formItemLayout} label="名称">
+              {getFieldDecorator("name", {
+                rules: [
+                  {
+                    required: true,
+                    message: "请输入名称!"
+                  }
+                ]
+              })(<Input placeholder="名称" onFocus={(e)=>{
+                this.props.force(true);
+              }} />)}
+            </FormItem>
             <FormItem {...formItemLayout} label="信用证金额">
               {getFieldDecorator("amount", {
                 rules: [

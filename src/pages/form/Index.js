@@ -13,6 +13,7 @@ class FormPage extends Component {
   state = {
     time: "", //默认时间
     org: "001", //默认机构
+    cancelDisabled:false,
     orgData: [
       {
         value: "001",
@@ -93,6 +94,7 @@ class FormPage extends Component {
                 </Button>
                 <Button
                   type="danger"
+                  disabled={this.state.cancelDisabled}
                   onClick={this.cancel}
                 >
                   取消
@@ -102,7 +104,10 @@ class FormPage extends Component {
             <Row>
               <Tabs defaultActiveKey="base" onChange={this.tabsCallback}>
                 <TabPane tab="基本信息" key="base">
-                  <BaseInfo ref="baseInfoForm" {...this.state} />
+                  <BaseInfo  {...this.state} force={(value)=>{
+                    console.log(value);
+                    this.setState({cancelDisabled:value});
+                  }} />
                 </TabPane>
                 <TabPane tab="银行信息" key="bank">
                   待开发
